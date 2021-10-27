@@ -362,10 +362,6 @@ const render = (genre) => {
     }</btutton><button class="read-${i} btn btn-danger" > Read more</btutton>
    </div>`);
 
-    // $("#searchBtn").click(() => {
-    //   search();
-    // });
-
     $(".favBtnbtn-" + i).click(() => {
       isFavorite(item.id);
     });
@@ -396,12 +392,6 @@ const isFavorite = (id) => {
   localStorage.setItem("arr", JSON.stringify(arr));
   render(globalGenre);
 };
-
-///////////////////////////////////////////////////////////////////// is Search Function
-// const search = () => {
-//   const result = $("#searchBox").val();
-//   return arr.filter((item) => item.name == result);
-// };
 
 /////////////////////////////////////////////////////////////////////////////// (PopUp) Modal Function
 const modalContent = document.querySelector(".modalContent");

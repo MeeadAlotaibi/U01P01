@@ -25,7 +25,6 @@ const favRender = () => {
     if (item.isFav) {
       $(".favBtnbtn-" + i).text("Remove from Favorite");
     }
-    //localStorage.setItem("favBtnbtn-", JSON.stringify(arr[i])); /// LocalStorage
   });
 };
 
