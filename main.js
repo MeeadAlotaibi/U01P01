@@ -313,7 +313,12 @@ let arr = JSON.parse(localStorage.getItem("arr")) || [
   },
 ];
 
+let favorite = [];
+
 let filteredArr = [...arr];
+
+let globalGenre;
+
 $(".showAll").click(() => {
   showAll();
 });
@@ -336,13 +341,25 @@ $(".romantic").click(() => {
   romantic();
 });
 
-const render = () => {
+///////////////////////////////////////////////////////////////////// is Favorite Function
+
+const render = (genre) => {
+  filteredArr = [...arr];
+
+  if (genre) {
+    filteredArr = arr.filter((item, i) => {
+      return item.type == genre;
+    });
+  }
+
   $(".bodyContent").html("");
   filteredArr.forEach((item, i) => {
     $(".bodyContent").append(`<div class="movie">
      <img src='${item.imageFile}'/>
      <p id='dec-${i}'>${item.name}</p>
-     <button class="favBtnbtn-${i} btn btn-secondary btn-sm " ><span>&starf;</span > Add to Favorite</btutton>
+     <button class="favBtnbtn-${i} btn btn-secondary btn-sm " ><span>&starf;</span >${
+      item.isFav ? "Remove from to Favorite" : "Add to Favorite"
+    }</btutton>
      <button class="read-${i}" > Read more</btutton>
    </div>`);
 
@@ -355,14 +372,16 @@ const render = () => {
     if (item.isFav) {
       $(".favBtnbtn-" + i).text("Remove from Favorite");
     }
-    //localStorage.setItem("favBtnbtn-", JSON.stringify(arr[i])); /// LocalStorage
   });
+
+  favorite = arr.filter((item) => item.isFav);
 };
+
 render();
 
-const isFavorite = (id) => {
-  console.log(id);
+///////////////////////////////////////////////////////////////////// is Favorite Function
 
+const isFavorite = (id) => {
   arr = arr.map((item) => {
     if (item.id === id) {
       return { ...item, isFav: !item.isFav };
@@ -372,10 +391,14 @@ const isFavorite = (id) => {
   });
 
   localStorage.setItem("arr", JSON.stringify(arr));
-  render();
+  render(globalGenre);
 };
 
-// modal
+///////////////////////////////////////////////////////////////////// is Search Function
+
+
+
+/////////////////////////////////////////////////////////////////////////////// (PopUp) Modal Function
 const modalContent = document.querySelector(".modalContent");
 const closeBtn = document.querySelector(".close");
 
@@ -396,59 +419,48 @@ function showDescription(item) {
 function showAll() {
   filteredArr = [...arr];
   $(".movie").show();
+  globalGenre = undefined;
   render();
 }
 
 //////////// Show Drama Button
 function drama() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Drama";
-  });
-  render();
+  globalGenre = "Drama";
+  render("Drama");
 }
 
 ////////// Show Horror Button
 function herror() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Horror";
-  });
-  render();
+  globalGenre = "Horror";
+  render("Horror");
 }
 
 ////////// Show Comedy Button    1
 function comedy() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Comedy";
-  });
-  render();
+  globalGenre = "Comedy";
+  render("Comedy");
 }
 
 ////////// Show Animation Button    2
 function animation() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Animation";
-  });
-  render();
+  globalGenre = "Animation";
+  render("Animation");
 }
 
 ////////// Show action Button    3
 function action() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Action";
-  });
-  render();
+  globalGenre = "Action";
+  render("Action");
 }
 
 ////////// Show Romantic Button    4
 function romantic() {
   $(".movie").hide();
-  filteredArr = arr.filter((item, i) => {
-    return item.type == "Romantic";
-  });
-  render();
+  globalGenre = "Romantic";
+  render("Romantic");
 }
