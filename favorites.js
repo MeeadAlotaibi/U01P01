@@ -13,7 +13,7 @@ const favRender = () => {
      <img src='${item.imageFile}'/>
      <p id='dec-${i}'>${item.name}</p>
      <button class="favBtnbtn-${i} btn btn-secondary btn-sm " ><span>&starf;</span > Add to Favorite</btutton>
-     <button class="read-${i}" > Read more</btutton>
+     <button class="read-${i} btn btn-danger" > Read more</btutton>
    </div>`);
 
     $(".favBtnbtn-" + i).click(() => {

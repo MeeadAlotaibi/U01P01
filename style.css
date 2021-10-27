@@ -58,11 +58,6 @@ span {
   content: "\272E";
 }
 .wrapper {
-  /* width: 100%;
-  height: 100%;
-  background-image: url(images/background.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover; */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -94,8 +89,9 @@ img {
   border-radius: 5px;
   box-shadow: black;
 }
-.searchBtn {
-  color: rgb(218, 28, 28);
+.read- {
+  background-color: black;
+  color: white;
 }
 .favorite {
   padding-bottom: 100px;
@@ -150,7 +146,6 @@ footer {
 } */
 
 input[type="text"] {
-  /* width: 100px; */
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -162,9 +157,7 @@ input[type="text"] {
   padding: 12px 20px 12px 40px;
   transition: width 0.4s ease-in-out;
 }
-/* /////////////////////////////////////////////////////////////////////////// */
 
-/* modal style */
 .modalContent {
   display: none;
   position: absolute;
@@ -176,9 +169,6 @@ input[type="text"] {
   z-index: 2;
 }
 
-/* /////////////////////////////////////////////////////////////////////////// */
-
-/* modal-content AND   modal-content-box  are same*/
 .modal-content {
   width: 50%;
   border: 2px solid gray;
@@ -194,9 +184,6 @@ input[type="text"] {
   background-color: white;
 }
 
-/* /////////////////////////////////////////////////////////////////////////// */
-
-/* close-content AND   closeX  are same*/
 .close {
   position: absolute;
   top: 2%;
@@ -205,31 +192,20 @@ input[type="text"] {
   transition: all 0.5s ease-in-out;
 }
 
-/* /////////////////////////////////////////////////////////////////////////// */
-
-/* close:hover   AND   closeX:hover    are same*/
 .close:hover {
   color: red;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 
-/* /////////////////////////////////////////////////////////////////////////// */
-
-/*  video  AND   video-    are same*/
 .video {
   width: 90%;
   height: 300px;
 }
 
-/* /////////////////////////////////////////////////////////////////////////// */
-
-/*  title  AND   titleH3    are same*/
 .title {
   margin: 1rem 0;
 }
-
-/* /////////////////////////////////////////////////////////////////////////// */
 
 .desc {
   font-size: 1.6rem;

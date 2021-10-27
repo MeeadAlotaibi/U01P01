@@ -359,9 +359,12 @@ const render = (genre) => {
      <p id='dec-${i}'>${item.name}</p>
      <button class="favBtnbtn-${i} btn btn-secondary btn-sm " ><span>&starf;</span >${
       item.isFav ? "Remove from to Favorite" : "Add to Favorite"
-    }</btutton>
-     <button class="read-${i}" > Read more</btutton>
+    }</btutton><button class="read-${i} btn btn-danger" > Read more</btutton>
    </div>`);
+
+    // $("#searchBtn").click(() => {
+    //   search();
+    // });
 
     $(".favBtnbtn-" + i).click(() => {
       isFavorite(item.id);
@@ -395,8 +398,10 @@ const isFavorite = (id) => {
 };
 
 ///////////////////////////////////////////////////////////////////// is Search Function
-
-
+// const search = () => {
+//   const result = $("#searchBox").val();
+//   return arr.filter((item) => item.name == result);
+// };
 
 /////////////////////////////////////////////////////////////////////////////// (PopUp) Modal Function
 const modalContent = document.querySelector(".modalContent");
