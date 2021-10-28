@@ -243,7 +243,7 @@ let arr = JSON.parse(localStorage.getItem("arr")) || [
     creators: "Megan Dong",
     stars: "Roman Engel",
     episodeGuide: "20 episodes",
-    media: "https://www.youtube.com/embed/ZvB7VwapZ68&feature=emb_title", //Done
+    media: "https://www.youtube.com/embed/HUthGFJ2j94", //Done
     isFav: false,
   },
   {
@@ -295,7 +295,7 @@ let arr = JSON.parse(localStorage.getItem("arr")) || [
     creators: "Adrien Brody",
     stars: " Benicio Del Toro, Adrien Brody, Tilda Swinton, Léa Seydoux",
     episodeGuide: "1h 30min",
-    media: "https://www.youtube.com/watch?v=TcPk2p0Zaw4", //Done
+    media: "https://www.youtube.com/embed/TcPk2p0Zaw4", //Done
     isFav: false,
   },
   {
@@ -308,7 +308,7 @@ let arr = JSON.parse(localStorage.getItem("arr")) || [
     creators: "Rob Reiner",
     stars: "Rob Reiner , Cary Elwes , Robin",
     episodeGuide: "2h",
-    media: "https://www.youtube.com/watch?v=O3CIXEAjcc8", //Done
+    media: "https://www.youtube.com/embed/O3CIXEAjcc8", //Done
     isFav: false,
   },
 ];
